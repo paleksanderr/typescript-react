@@ -3,7 +3,7 @@
 import axios from 'axios';
 const url = 'https://jsonplaceholder.typicode.com/todos/17';
 
-interface Todoo {
+interface Todo {
   id: number;
   title: string;
   completed: boolean;
@@ -11,9 +11,16 @@ interface Todoo {
 }
 
 axios.get(url).then(response => {
-  const todo = response.data as Todoo;
+  const todo = response.data as Todo;
   const id = todo.id;
   const title = todo.title;
   const complete = todo.completed;
-  console.log(`the id is ${id} the userID is ${userId} the title is ${title} the complete is ${complete}`);
+  logTodo(id, title, complete);
+  
 })
+
+const logTodo = (i:number, titl:string, complete:boolean) => {
+console.log(`the id is ${i} ) 
+the title is ${titl} 
+the complete is ${complete}`);
+}
