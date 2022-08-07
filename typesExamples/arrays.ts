@@ -10,3 +10,7 @@ const carByMake = [
 carMakers.map((car: string):string =>{
 return car;
 })
+
+//flexible types
+
+const importantDates: (string | Date)[] = [new Date(), '2030-10-10'];
